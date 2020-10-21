@@ -8,8 +8,12 @@ As permissões são um dos aspectos mais importantes do Linux (na verdade, de to
 
 Como você deve saber, somente o super-usuário (root) tem ações irrestritas no sistema, justamente por ser o usuário responsável pela configuração, administração e manutenção do Linux. Cabe a ele, por exemplo, determinar o que cada usuário pode executar, criar, modificar, etc. Naturalmente, a forma usada para especificar o que cada usuário do sistema pode fazer é a determinação de permissões. Sendo assim, neste artigo você verá como configurar permissões de arquivos e diretórios, assim como modificá-las.
 
+<br/>
+<br/>
+
 ### Entendendo as permissões
 
+<br/>
 
     drwx------ ... 2 wester ............. 512 Jan ... 29 23:30 .. Arquivos/
     -rw-rw-r-- ... 1 wester ....... 280232 Dec .. 16 22:41... notas.txt
