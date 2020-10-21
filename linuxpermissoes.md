@@ -18,6 +18,7 @@ Como você deve saber, somente o super-usuário (**root**) tem ações irrestrit
 drwx------ ... 2 user ............. 512 Jan ... 29 23:30 .. Arquivos/
 -rw-rw-r-- ... 1 user ....... 280232 Dec .. 16 22:41... notas.txt
 ```
+
 <br/>
 
 As linhas acima representam um comando digitado (`ls -l`) para listar um diretório e suas permissões. O primeiro item que aparece em cada linha **(drwx----- e -rw-rw-r-)** é a forma usada para mostrar as permissões do diretório Arquivos e do arquivo `notas.txt`. É esse item, que recebe o nome de string, que vamos estudar. Um ponto interessante de citar é que o Linux trata todos os diretórios como arquivos também, portanto, as permissões se aplicam de igual forma para ambos. Tais permissões podem ser divididas em quatro partes para indicar: tipo, proprietário, grupo e outras permissões. O primeiro caractere da string indica o tipo de arquivo: se for **"d"** representa um diretório, se for "-" equivale a um arquivo. Entretanto, outros caracteres podem aparecer para indicar outros tipos de arquivos, conforme mostra a tabela abaixo:
@@ -70,8 +71,6 @@ A ordem em que as permissões devem aparecer é **rwx**. Sendo assim, vamos ente
 
 #### Linha 1:
 
-<br/>
-
     drwx------ ... 2 user ............... 512 Jan ... 29 23:30 .. Arquivos/
 
 <br/>
@@ -84,8 +83,6 @@ A ordem em que as permissões devem aparecer é **rwx**. Sendo assim, vamos ente
 <br/>
 
 #### Linha 2:
-
-<br/>
 
     -rw-rw-r-- ... 1 user .......... 280232 Dec .. 16 22:41... notas.txt
 
@@ -163,9 +160,11 @@ Para poder combinar os símbolos destas duas listas, usam-se os operadores:
 
 Para mostrar como essa combinação é feita, vamos supor que você deseje adicionar permissão de gravação no arquivo teste.old para um usuário. O comando a ser digitado é:
 
-    chmod u+w teste.old
+`chmod u+w teste.old`
 
 O **"u"** indica que a permissão será dada a um usuário, o sinal de adição **(+)** indica que está sendo adicionada uma permissão e **"w"** indica que a permissão que está sendo dada é de gravação.
+
+<br/>
 
 Caso você queira dar permissões de leitura e gravação ao seu grupo, o comando será:
 
@@ -174,6 +173,8 @@ Caso você queira dar permissões de leitura e gravação ao seu grupo, o comand
 Agora, vamos supor que o arquivo teste.old deverá estar com todas as permissões disponíveis para o grupo. Podemos usar então:
 
 `chmod g=rwx teste.old`
+
+<br/>
 
 Repare que o arquivo **teste.old** tem permissões **rwx** para o grupo
 Repare que o arquivo **teste.old** tem permissões **rwx** para o grupo
