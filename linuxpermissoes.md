@@ -145,27 +145,25 @@ Se você não conhece o sistema binário deve estar se perguntando o que esse "m
  
 Chegou a hora então de relacionar a explicação do parágrafo acima com a coluna Permissão. Para exemplificar, vamos utilizar a permissão rw-, cujo valor em binário é 110, que por sua vez, em decimal corresponde ao número 6. Então, em vez de usar rw- ou 110 para criar a permissão, simplesmente usa-se o número 6. Repare que, com o método numérico, usamos somente um dígito para representar uma permissão, em vez de três. Assim sendo, a string de permissões **r--r--r--** pode ser representa por 444, pois r-- em decimal é igual a quatro. Observe o exemplo abaixo:
 
- <br/>
-
-chmod 600 notas.txt
+`chmod 600 notas.txt`
 
  <br/>
 
 - Permissões **rw-------** no arquivo notas.txt com o comando chmod 600
 - Permissões **rw-------** no arquivo notas.txt com o comando chmod 600
 
-Acima, estão sendo dadas as permissões **rw-------** ao arquivo notas.txt, pois 6 equivale a **rw-** e 0 equivale a **---**. Como zero aparece duas vezes, forma-se então o valor 600. Faça o comando acima com um arquivo de teste e depois digite ls- l notas.txt para ver o que aparece (notas.txt deve ser substituído pelo arquivo que você está usando). A tabela abaixo mostra uma lista de configurações bastante utilizadas:
+Acima, estão sendo dadas as permissões **rw-------** ao arquivo `notas.txt`, pois 6 equivale a **rw-** e 0 equivale a **---**. Como zero aparece duas vezes, forma-se então o valor 600. Faça o comando acima com um arquivo de teste e depois digite ls- l notas.txt para ver o que aparece (notas.txt deve ser substituído pelo arquivo que você está usando). A tabela abaixo mostra uma lista de configurações bastante utilizadas:
 
-    --------- 	000
-    r-------- 	400
-    r--r--r-- 	444
-    rw------- 	600
-    rw-r--r-- 	644
-    rw-rw-rw- 	666
-    rwx------ 	700
-    rwxr-x--- 	750
-    rwxr-xr-x 	755
-    rwxrwxrwx 	777
+`--------- 	000`
+`r-------- 	400`
+`r--r--r-- 	444`
+`rw------- 	600`
+`rw-r--r-- 	644`
+`rw-rw-rw- 	666`
+`rwx------ 	700`
+`rwxr-x--- 	750`
+`rwxr-xr-x 	755`
+`rwxrwxrwx 	777`
 
 As três últimas permissões da tabela são comumente usadas para programas e diretórios.
 
