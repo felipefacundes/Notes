@@ -2,6 +2,7 @@
 ## Introdução
 
 <br/>
+<br/>
 
 As permissões são um dos aspectos mais importantes do Linux (na verdade, de todos os sistemas baseados em Unix). Elas são usadas para vários fins, mas servem principalmente para proteger o sistema e os arquivos dos usuários. Manipular permissões é uma atividade interessante, mas complexa ao mesmo tempo. Mas tal complexidade não deve ser interpretada como dificuldade e sim como possibilidade de lidar com uma grande variedade de configurações, o que permite criar vários tipos de proteção a arquivos e diretórios.
 
@@ -13,7 +14,6 @@ Como você deve saber, somente o super-usuário (root) tem ações irrestritas n
     drwx------ ... 2 wester ............. 512 Jan ... 29 23:30 .. Arquivos/
     -rw-rw-r-- ... 1 wester ....... 280232 Dec .. 16 22:41... notas.txt
 
-<br/>
 <br/>
 
 As linhas acima representam um comando digitado (ls -l) para listar um diretório e suas permissões. O primeiro item que aparece em cada linha **(drwx----- e -rw-rw-r-)** é a forma usada para mostrar as permissões do diretório Arquivos e do arquivo notas.txt. É esse item, que recebe o nome de string, que vamos estudar. Um ponto interessante de citar é que o Linux trata todos os diretórios como arquivos também, portanto, as permissões se aplicam de igual forma para ambos. Tais permissões podem ser divididas em quatro partes para indicar: tipo, proprietário, grupo e outras permissões. O primeiro caractere da string indica o tipo de arquivo: se for **"d"** representa um diretório, se for "-" equivale a um arquivo. Entretanto, outros caracteres podem aparecer para indicar outros tipos de arquivos, conforme mostra a tabela abaixo:
@@ -27,7 +27,6 @@ As linhas acima representam um comando digitado (ls -l) para listar um diretóri
     - => arquivo "normal"
 
 <br/>
-<br/>
 
 Repare agora que no restante da string ainda há 9 caracteres. Você já sabe o que significa o primeiro. Os demais são divididos em três grupos de três, cada um representado o proprietário, o grupo e todos os demais, respectivamente. Tomando a linha 2 do exemplo **(-rw-rw-r-)**, desconsiderando o primeiro caractere e dividindo a string restante em 3 partes, ficaria assim:
 
@@ -35,7 +34,6 @@ Repare agora que no restante da string ainda há 9 caracteres. Você já sabe o 
     rw- => a segunda parte significa permissões do grupo ao qual o usuário pertence
     r-- => a terceira parte significa permissões para os demais usuários
 
-<br/>
 <br/>
 
 Vamos entender agora o que significa esses caracteres **(r, w, x, -)**. Há, basicamente, três tipos de permissões: **leitura, gravação** e **execução**. Leitura permite ao usuário ler o conteúdo do arquivo mas não alterá-lo. Gravação permite que o usuário altere o arquivo. Execução, como o nome diz, permite que o usuário execute o arquivo, no caso de ser executável. Mas acontece que as permissões não funcionam isoladamente, ou seja, de forma que o usuário tenha ou permissão de leitura ou de gravação ou de execução. As permissões funcionam em conjunto. Isso quer dizer que cada arquivo/diretório tem as três permissões definidas, cabendo ao dono determinar qual dessas permissões é habilitada para os usuários ou não. Pode ser que uma determinada quantidade de usuários tenha permissão para alterar um arquivo, mas outros não, por exemplo. Daí a necessidade de se usar grupos. No caso, a permissão de gravação desse arquivo será dada ao grupo, fazendo com que todo usuário membro dele possa alterar o arquivo. Note que é necessário ter certo cuidado com as permissões. Por exemplo, do que adianta o usuário ter permissão de gravação se ele não tem permissão de leitura habilitada?
@@ -47,7 +45,6 @@ Agora que já sabemos o significado das divisões da string, vamos entender o qu
     x => significa permissão de execução (execution);
     - => significa permissão desabilitada.
 
-<br/>
 <br/>
 
 A ordem em que as permissões devem aparecer é **rwx**. Sendo assim, vamos entender a string do nosso exemplo dividindo-a em 4 partes:
