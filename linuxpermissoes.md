@@ -24,12 +24,12 @@ As linhas acima representam um comando digitado (`ls -l`) para listar um diretó
 
 | String | Tipo |
 | --- | --- |
-| d **=>** | diretório |
-| b **=>** | arquivo de bloco |
-| c **=>** | arquivo especial de caractere |
-| p **=>** | canal |
-| s **=>** | socket |
-| - **=>** | arquivo "normal" |
+| d | **=>** diretório |
+| b | **=>** arquivo de bloco |
+| c | **=>** arquivo especial de caractere |
+| p | **=>** canal |
+| s | **=>** socket |
+| - | **=>** arquivo "normal" |
 
 <br/>
 
@@ -37,9 +37,9 @@ Repare agora que no restante da string ainda há 9 caracteres. Você já sabe o 
 
 | String | Significado |
 | ------ | ----------- |
-| rw- => | a primeira parte significa permissões do proprietário |
-| rw- => | a segunda parte significa permissões do grupo ao qual o usuário pertence |
-| r-- => | a terceira parte significa permissões para os demais usuários |
+| rw- | => a primeira parte significa permissões do proprietário |
+| rw- | => a segunda parte significa permissões do grupo ao qual o usuário pertence |
+| r-- | => a terceira parte significa permissões para os demais usuários |
 
 <br/>
 
@@ -47,17 +47,19 @@ Vamos entender agora o que significa esses caracteres **(r, w, x, -)**. Há, bas
 
 Agora que já sabemos o significado das divisões da string, vamos entender o que as letras **r, w, x** e o caractere - representam:
 
-    r => significa permissão de leitura (read);
-    w => significa permissão de gravação (write);
-    x => significa permissão de execução (execution);
-    - => significa permissão desabilitada.
+| String | Significado |
+| ------ | ----------- |
+| r | => significa permissão de leitura (read) |
+| w | => significa permissão de gravação (write) |
+| x | => significa permissão de execução (execution) |
+| - | => significa permissão desabilitada. |
 
 <br/>
 
 A ordem em que as permissões devem aparecer é **rwx**. Sendo assim, vamos entender a string do nosso exemplo dividindo-a em 4 partes:
 
 #### Linha 1:
-    drwx------ ... 2 wester ............... 512 Jan ... 29 23:30 .. Arquivos/
+    drwx------ ... 2 user ............... 512 Jan ... 29 23:30 .. Arquivos/
 
 - é um diretório (d);
 - o proprietário pode alterá-lo, gravá-lo e executá-lo (rwx);
@@ -65,7 +67,7 @@ A ordem em que as permissões devem aparecer é **rwx**. Sendo assim, vamos ente
 - os demais usuários não podem alterá-lo, gravá-lo, nem executá-lo (---).
 
 #### Linha 2:
-    -rw-rw-r-- ... 1 wester .......... 280232 Dec .. 16 22:41... notas.txt
+    -rw-rw-r-- ... 1 user .......... 280232 Dec .. 16 22:41... notas.txt
 
 
 - é um arquivo (-);
@@ -75,11 +77,13 @@ A ordem em que as permissões devem aparecer é **rwx**. Sendo assim, vamos ente
 
 A tabela abaixo mostra as permissões mais comuns:
 
-    --- => nenhuma permissão;
-    r-- => permissão de leitura;
-    r-x => leitura e execução;
-    rw- => leitura e gravação;
-    rwx => leitura, gravação e execução.
+| String | Significado |
+| --- | --- |
+| --- | => nenhuma permissão |
+| r-- | => permissão de leitura |
+| r-x | => leitura e execução |
+| rw- | => leitura e gravação |
+| rwx | => leitura, gravação e execução. |
 
 #### Configurando permissões com chmod
 
@@ -91,12 +95,13 @@ Lista 1
 
 - Símbolo
 
-```
-u => usuário
-g => grupo
-O (letra 'o' maiúscula) => outro
-a => todos
-```
+| String | Significado |
+| --- | --- |
+| u | => usuário |
+| g | => grupo |
+| O | (letra 'o' maiúscula) => outro |
+| a | => todos |
+
 Lista 2
 
 - Símbolo
@@ -109,9 +114,11 @@ x => execução
 
 Para poder combinar os símbolos destas duas listas, usam-se os operadores:
 
-    + (sinal de adição) => adicionar permissão
-    - (sinal de subtração) => remover permissão
-    = (sinal de igualdade) => definir permissão
+| String | Significado |
+| --- | --- |
+| + | (sinal de adição) => adicionar permissão |
+| - | (sinal de subtração) => remover permissão |
+| = | (sinal de igualdade) => definir permissão |
 
 Para mostrar como essa combinação é feita, vamos supor que você deseje adicionar permissão de gravação no arquivo teste.old para um usuário. O comando a ser digitado é:
 
@@ -157,21 +164,23 @@ Chegou a hora então de relacionar a explicação do parágrafo acima com a colu
 
  <br/>
 
-- Permissões **rw-------** no arquivo notas.txt com o comando chmod 600
-- Permissões **rw-------** no arquivo notas.txt com o comando chmod 600
+- Permissões **rw-------** no arquivo notas.txt com o comando `chmod 600`
+- Permissões **rw-------** no arquivo notas.txt com o comando `chmod 600`
 
-Acima, estão sendo dadas as permissões **rw-------** ao arquivo `notas.txt`, pois 6 equivale a **rw-** e 0 equivale a **---**. Como zero aparece duas vezes, forma-se então o valor `600`. Faça o comando acima com um arquivo de teste e depois digite `ls- l` notas.txt para ver o que aparece (notas.txt deve ser substituído pelo arquivo que você está usando). A tabela abaixo mostra uma lista de configurações bastante utilizadas:
+Acima, estão sendo dadas as permissões **rw-------** ao arquivo `notas.txt`, pois 6 equivale a **rw-** e 0 equivale a **---**. Como zero aparece duas vezes, forma-se então o valor `600`. Faça o comando acima com um arquivo de teste e depois digite `ls- l notas.txt` para ver o que aparece (notas.txt deve ser substituído pelo arquivo que você está usando). A tabela abaixo mostra uma lista de configurações bastante utilizadas:
 
-    --------- 	000
-    r-------- 	400
-    r--r--r-- 	444
-    rw------- 	600
-    rw-r--r-- 	644
-    rw-rw-rw- 	666
-    rwx------ 	700
-    rwxr-x--- 	750
-    rwxr-xr-x 	755
-    rwxrwxrwx 	777
+| String | Representação Numérica |
+| --- | --- |
+| --------- | 000 |
+| r-------- | 400 |
+| r--r--r-- | 444 |
+| rw------- | 600 |
+| rw-r--r-- | 644 |
+| rw-rw-rw- | 666 |
+| rwx------ | 700 |
+| rwxr-x--- | 750 |
+| rwxr-xr-x | 755 |
+| rwxrwxrwx | 777 |
 
 As três últimas permissões da tabela são comumente usadas para programas e diretórios.
 
