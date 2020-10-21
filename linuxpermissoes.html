@@ -1,0 +1,715 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+
+<title>Entendendo e usando permiss&otilde;es no Linux</title>
+
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<link href="/newsiw.xml" rel="alternate" type="application/rss+xml" title="RSS"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta http-equiv="content-language" content="pt-br"/>
+<link rel="shortcut icon" href="layout04/img/favicon.ico"/>
+
+<meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" href="/min/f=layout04/css/vendor/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="/min/f=layout04/css/vendor/bootstrap/bootstrap-theme.min.css">
+
+<link rel="stylesheet" href="/min/f=layout04/css/vendor/font-awesome/font-awesome.css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="/min/f=layout04/css/vendor/font-awesome/font-awesome.css"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Serif:400,400italic" type="text/css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Serif:400,400italic" type="text/css"></noscript>
+
+<link rel="stylesheet" href="/min/f=layout04/css/styles-iw.css" id="theme-styles">
+
+<!-- google page level -->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2797463243909555",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+<!-- Futuras inserções -->
+
+</head>
+
+<body id="artigo">
+
+<body>
+<header>
+	<div class="widewrapper masthead">
+		<div class="container">
+		
+			<a href="https://www.infowester.com/index.php" id="logo">
+            <img src="layout04/img/iw-logo-2018.jpg" alt="InfoWester"></a>
+	
+	<!--<div id="busca"> -->
+				
+	<!-- </div>			-->	
+
+       </div> <!-- container -->
+    </div> <!-- widewrapper masthead -->
+
+    <div class="widewrapper subheader">
+		
+		<div class="container">
+			<div class="tales-breadcrumb">
+			</div>
+			
+                <div id="mini-logo" align="left">
+						<a href="https://www.infowester.com/index.php" id="logo">
+						<img src="layout04/img/iw_mini.gif" width="80" height="38" alt="InfoWester"></a>
+				</div>				
+			
+                <div id="mobile-nav-toggle" class="pull-right">
+                    <a href="#" data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
+                        <i class="icon-reorder"></i>
+                    </a>
+                </div>			
+
+            <nav class="pull-left tales-nav">
+                    <div class="collapse navbar-collapse">
+						<ul class="nav nav-pills navbar-nav">
+							<li><a href="https://www.infowester.com/index.php">&#149;In&iacute;cio&#149;</a></li>
+							<li><a href="https://www.infowester.com/hardware.php">Hardware & Tecnologia</a></li>    
+							<li><a href="https://www.infowester.com/software.php">Software & Seguran&ccedil;a</a></li>  
+							<li><a href="https://www.infowester.com/redes.php">Conectividade</a></li>   
+							<li><a href="https://www.infowester.com/dicas.php">Dicas & Tutoriais</a></li>  
+							<li><a href="https://www.infowester.com/blog/">Blog</a></li>  						
+							<li><a href="https://www.infowester.com/busca.php"><em>Busca</em></a></li>							
+                        </ul>
+                    </div>
+            </nav> 			
+
+        </div> <!-- container -->
+    </div><!-- widewrapper subheader -->
+</header>
+
+<!-- final do trecho a seguir em -->
+<div class="widewrapper main">
+	<div class="container">
+            <div class="row">
+                <div class="col-md-8 blog-main">
+                    <article class="blog-post">
+	<header>
+
+   <!-- Futuras inserções 2 -->
+
+	<div>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- links_topo_022017 -->
+		<ins class="adsbygoogle"
+			style="display:block"
+			data-ad-client="ca-pub-2797463243909555"
+			data-ad-slot="5307864645"
+			data-ad-format="link"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+
+	<br />
+
+	<style type="text/css">
+	.superbanner_art_ad_1 { display:inline-block; width: 320px; height: 100px; }
+	@media (max-width: 499px) { .superbanner_art_ad_1 { display: none; } }
+	@media(min-width: 500px) { .superbanner_art_ad_1 { width: 728px; height: 90px; } }
+	</style>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- superbanner_art_ad_1 -->
+	<ins class="adsbygoogle superbanner_art_ad_1"
+		 data-ad-client="ca-pub-2797463243909555"
+		 data-ad-slot="8804079525"
+		 data-ad-format="auto"
+		 data-full-width-responsive="true"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+</div>
+
+	<div id="breadcrumb">
+		<a href="https://www.infowester.com/index.php">In&iacute;cio</a> &raquo; <a href="https://www.infowester.com/software.php">Software</a> &raquo;
+	</div>
+    
+    <h1><a href="linuxpermissoes.php">Entendendo e usando permiss&otilde;es no Linux</a></h1>
+
+	</header>
+
+<div class="body">
+
+         	
+    <div class="ad">
+          <style type="text/css">
+.topo_texto_1 { display: inline-block; width: 320px; height: 100px; }
+@media (max-width: 400px) { .topo_texto_1 { width: 320px; height: 100px; } }
+@media (min-width: 500px) { .topo_texto_1 { width: 336px; height: 280px; } }
+</style>
+<!-- topo_texto_1 -->
+<ins class="adsbygoogle topo_texto_1"
+     data-ad-client="ca-pub-2797463243909555"
+     data-ad-slot="6000138003"
+	 data-full-width-responsive="true"></ins>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	 
+<script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+    </div>
+
+    <h2>Introdu&ccedil;&atilde;o</h2>
+
+	<!-- Futuras inserções 3 -->
+	
+      <p>As permiss&otilde;es s&atilde;o um dos aspectos mais importantes do Linux 
+        (na verdade, de todos os sistemas baseados em Unix). Elas s&atilde;o usadas 
+        para v&aacute;rios fins, mas servem principalmente para proteger o sistema 
+        e os arquivos dos usu&aacute;rios. Manipular permiss&otilde;es &eacute; 
+        uma atividade interessante, mas complexa ao mesmo tempo. Mas tal complexidade 
+        n&atilde;o deve ser interpretada como dificuldade e sim como possibilidade 
+        de lidar com uma grande variedade de configura&ccedil;&otilde;es, o que 
+        permite criar v&aacute;rios tipos de prote&ccedil;&atilde;o a arquivos 
+        e diret&oacute;rios. </p>
+      <p>Como voc&ecirc; deve saber, somente o super-usu&aacute;rio (<em>root</em>) 
+        tem a&ccedil;&otilde;es irrestritas no sistema, justamente por ser o usu&aacute;rio 
+        respons&aacute;vel pela configura&ccedil;&atilde;o, administra&ccedil;&atilde;o 
+        e manuten&ccedil;&atilde;o do Linux. Cabe a ele, por exemplo, determinar 
+        o que cada usu&aacute;rio pode executar, criar, modificar, etc. Naturalmente, 
+        a forma usada para especificar o que cada usu&aacute;rio do sistema pode 
+        fazer &eacute; a determina&ccedil;&atilde;o de permiss&otilde;es. Sendo 
+        assim, neste artigo voc&ecirc; ver&aacute; como configurar permiss&otilde;es 
+        de arquivos e diret&oacute;rios, assim como modific&aacute;-las.</p>
+      <br />
+      <h2>Entendendo as permiss&otilde;es</h2>
+      <p><strong>drwx------ <font color="#FFFFFF">...</font> 2 wester <font color="#FFFFFF">.............</font> 
+        512 Jan <font color="#FFFFFF">...</font> 29 23:30 <font color="#FFFFFF">..</font> 
+        Arquivos/<br />
+        -rw-rw-r-- <font color="#FFFFFF">...</font> 1 wester <font color="#FFFFFF">.......</font>
+        280232 Dec <font color="#FFFFFF">..</font> 16 22:41<font color="#FFFFFF">...</font>
+        notas.txt</strong></p>
+      <p>As linhas acima representam um comando digitado (<em>ls -l</em>) para listar 
+        um diret&oacute;rio e suas permiss&otilde;es. O primeiro item que aparece 
+        em cada linha (<strong>drwx-----</strong> e <strong>-rw-rw-r-</strong>) &eacute; a forma usada 
+        para mostrar as permiss&otilde;es do diret&oacute;rio <em>Arquivos</em> 
+        e do arquivo <em>notas.txt</em>. &Eacute; esse item, que recebe o nome de 
+        <em>string</em>, que vamos estudar. Um ponto interessante de citar &eacute; 
+        que o Linux trata todos os diret&oacute;rios como arquivos tamb&eacute;m, 
+        portanto, as permiss&otilde;es se aplicam de igual forma para ambos. Tais 
+        permiss&otilde;es podem ser divididas em quatro partes para indicar: tipo, 
+        propriet&aacute;rio, grupo e outras permiss&otilde;es. O primeiro caractere 
+        da string indica o tipo de arquivo: se for &quot;<strong>d</strong>&quot; representa 
+        um diret&oacute;rio, se for &quot;<strong>-</strong>&quot; equivale a um arquivo. 
+        Entretanto, outros caracteres podem aparecer para indicar outros tipos 
+        de arquivos, conforme mostra a tabela abaixo:</p>
+      <p><strong>d =&gt; diret&oacute;rio<br />
+        b =&gt; arquivo de bloco<br />
+        c =&gt; arquivo especial de caractere<br />
+        p =&gt; canal<br />
+        s =&gt; socket<br />
+        - =&gt; arquivo &quot;normal&quot;</strong></p>
+      <p>Repare agora que no restante da string ainda h&aacute; 9 caracteres. 
+        Voc&ecirc; j&aacute; sabe o que significa o primeiro. Os demais s&atilde;o 
+        divididos em tr&ecirc;s grupos de tr&ecirc;s, cada um representado o propriet&aacute;rio, 
+        o grupo e todos os demais, respectivamente. Tomando a linha 2 do exemplo 
+        (<strong>-rw-rw-r-</strong>), desconsiderando o primeiro caractere e dividindo a 
+        string restante em 3 partes, ficaria assim:</p>
+      <p><strong>rw- =&gt; a primeira parte significa permiss&otilde;es do propriet&aacute;rio<br />
+        rw- =&gt; a segunda parte significa permiss&otilde;es do grupo ao qual 
+        o usu&aacute;rio pertence<br />
+        r-- =&gt; a terceira parte significa permiss&otilde;es para os demais 
+        usu&aacute;rios</strong></p>
+      <p>Vamos entender agora o que significa esses caracteres (<strong>r</strong>, <strong>w</strong>, 
+        <strong>x</strong>, <strong>-</strong>). H&aacute;, basicamente, tr&ecirc;s tipos de permiss&otilde;es: 
+        <strong>leitura</strong>, <strong>grava&ccedil;&atilde;o</strong> e <strong>execu&ccedil;&atilde;o</strong>. 
+        Leitura permite ao usu&aacute;rio ler o conte&uacute;do do arquivo mas 
+        n&atilde;o alter&aacute;-lo. Grava&ccedil;&atilde;o permite que o usu&aacute;rio 
+        altere o arquivo. Execu&ccedil;&atilde;o, como o nome diz, permite que 
+        o usu&aacute;rio execute o arquivo, no caso de ser execut&aacute;vel. 
+        Mas acontece que as permiss&otilde;es n&atilde;o funcionam isoladamente, 
+        ou seja, de forma que o usu&aacute;rio tenha ou permiss&atilde;o de leitura 
+        ou de grava&ccedil;&atilde;o ou de execu&ccedil;&atilde;o. As permiss&otilde;es 
+        funcionam em conjunto. Isso quer dizer que cada arquivo/diret&oacute;rio 
+        tem as tr&ecirc;s permiss&otilde;es definidas, cabendo ao dono determinar 
+        qual dessas permiss&otilde;es &eacute; habilitada para os usu&aacute;rios 
+        ou n&atilde;o. Pode ser que uma determinada quantidade de usu&aacute;rios 
+        tenha permiss&atilde;o para alterar um arquivo, mas outros n&atilde;o, 
+        por exemplo. Da&iacute; a necessidade de se usar grupos. No caso, a permiss&atilde;o 
+        de grava&ccedil;&atilde;o desse arquivo ser&aacute; dada ao grupo, fazendo 
+        com que todo usu&aacute;rio membro dele possa alterar o arquivo. Note 
+        que &eacute; necess&aacute;rio ter certo cuidado com as permiss&otilde;es. 
+        Por exemplo, do que adianta o usu&aacute;rio ter permiss&atilde;o de grava&ccedil;&atilde;o 
+        se ele n&atilde;o tem permiss&atilde;o de leitura habilitada?</p>
+      <p>Agora que j&aacute; sabemos o significado das divis&otilde;es da string, 
+        vamos entender o que as letras <strong>r</strong>, <strong>w</strong>, <strong>x</strong> e o caractere 
+        <strong>-</strong> representam:</p>
+      <p><strong>r =&gt; significa permiss&atilde;o de leitura (read);<br />
+        w =&gt; significa permiss&atilde;o de grava&ccedil;&atilde;o (write);<br />
+        x =&gt; significa permiss&atilde;o de execu&ccedil;&atilde;o (execution);<br />
+        - =&gt; significa permiss&atilde;o desabilitada.</strong></p>
+      <p>A ordem em que as permiss&otilde;es devem aparecer &eacute; <strong>rwx</strong>. 
+        Sendo assim, vamos entender a string do nosso exemplo dividindo-a em 4 
+        partes:</p>
+      <p>Linha 1: <br />
+        <strong>drwx------ <font color="#FFFFFF">...</font> 2 wester <font color="#FFFFFF">...............</font> 
+        512 Jan <font color="#FFFFFF">...</font> 29 23:30 <font color="#FFFFFF">..</font> 
+        Arquivos/</strong></p>
+      <p>- &eacute; um diret&oacute;rio (<strong>d</strong>);<br />
+        - o propriet&aacute;rio pode alter&aacute;-lo, grav&aacute;-lo e execut&aacute;-lo 
+        (<strong>rwx</strong>);<br />
+        - o grupo n&atilde;o pode pode alter&aacute;-lo, grav&aacute;-lo, nem 
+        execut&aacute;-lo (<strong>---</strong>);<br />
+        - os demais usu&aacute;rios n&atilde;o podem alter&aacute;-lo, grav&aacute;-lo, 
+        nem execut&aacute;-lo (<strong>---</strong>).</p>
+      <p>Linha 2:<br />
+        <strong>-rw-rw-r-- <font color="#FFFFFF">...</font> 1 wester <font color="#FFFFFF">..........</font> 
+        280232 Dec <font color="#FFFFFF">..</font> 16 22:41<font color="#FFFFFF">...</font> 
+        notas.txt</strong></p>
+      <p>- &eacute; um arquivo (<strong>-</strong>);<br />
+        - o propriet&aacute;rio pode alter&aacute;-lo, grav&aacute;-lo, mas n&atilde;o 
+        execut&aacute;-lo. Repare que como este arquivo n&atilde;o &eacute; execut&aacute;vel, 
+        a permiss&atilde;o de execu&ccedil;&atilde;o aparece desabilitada (<strong>rw-</strong>);<br />
+        - o grupo tem permiss&otilde;es id&ecirc;nticas ao propriet&aacute;rio 
+        (<strong>rw-</strong>);<br />
+        - o usu&aacute;rio somente tem permiss&atilde;o de ler o arquivo, n&atilde;o 
+        pode alter&aacute;-lo (<strong>r--</strong>).</p>
+      <p>A tabela abaixo mostra as permiss&otilde;es mais comuns:</p>
+      <p><strong>--- =&gt; nenhuma permiss&atilde;o;<br />
+        r-- =&gt; permiss&atilde;o de leitura;<br />
+        r-x =&gt; leitura e execu&ccedil;&atilde;o;<br />
+        rw- =&gt; leitura e grava&ccedil;&atilde;o;<br />
+        rwx =&gt; leitura, grava&ccedil;&atilde;o e execu&ccedil;&atilde;o.</strong></p><br />
+      <h2>Configurando permiss&otilde;es com chmod</h2>
+      <p>Nos t&oacute;picos anteriores voc&ecirc; dever tido pelo menos uma no&ccedil;&atilde;o 
+        do que s&atilde;o permiss&otilde;es e de sua import&acirc;ncia no Linux. 
+        Chegou a hora de aprender a configurar permiss&otilde;es e isso &eacute; 
+        feito atrav&eacute;s do comando <strong>chmod</strong> (de <em>change mode</em>). 
+        Um detalhe interessante desse comando &eacute; que voc&ecirc; pode configurar 
+        permiss&otilde;es de duas maneiras: simbolicamente e numericamente. Primeiramente 
+        veremos o m&eacute;todo simb&oacute;lico. </p>
+      <p>Para ter uma vis&atilde;o mais clara da forma simb&oacute;lica com o
+        chmod, imagine que tais s&iacute;mbolos se encontram em duas listas, e
+        a combina&ccedil;&atilde;o deles gera a permiss&atilde;o:</p>
+      <p><strong>Lista 1</strong><br />
+        S&iacute;mbolo <br />
+        <strong>u =&gt; usu&aacute;rio<br />
+        g =&gt; grupo<br />
+        O (letra 'o' mai&uacute;scula) =&gt; outro<br />
+        a =&gt; todos</strong></p>
+      <p><strong>Lista 2</strong><br />
+        S&iacute;mbolo<br />
+        <strong>r =&gt; leitura<br />
+        w =&gt; grava&ccedil;&atilde;o<br />
+        x =&gt; execu&ccedil;&atilde;o</strong></p>
+      <p>Para poder combinar os s&iacute;mbolos destas duas listas, usam-se os
+        operadores:</p>
+      <p><strong>+ (sinal de adi&ccedil;&atilde;o) =&gt; adicionar permiss&atilde;o<br />
+        - (sinal de subtra&ccedil;&atilde;o) =&gt; remover permiss&atilde;o<br />
+        = (sinal de igualdade) =&gt; definir permiss&atilde;o</strong></p>
+      <p>Para mostrar como essa combina&ccedil;&atilde;o &eacute; feita, vamos 
+        supor que voc&ecirc; deseje adicionar permiss&atilde;o de grava&ccedil;&atilde;o 
+        no arquivo <em>teste.old</em> para um usu&aacute;rio. O comando a ser digitado 
+        &eacute;:</p>
+      <p><strong>chmod u+w teste.old</strong></p>
+      <p>O &quot;u&quot; indica que a permiss&atilde;o ser&aacute; dada a um usu&aacute;rio, 
+        o sinal de adi&ccedil;&atilde;o (+) indica que est&aacute; sendo adicionada 
+        uma permiss&atilde;o e &quot;w&quot; indica que a permiss&atilde;o que 
+        est&aacute; sendo dada &eacute; de grava&ccedil;&atilde;o. </p>
+      <p>Caso voc&ecirc; queira dar permiss&otilde;es de leitura e grava&ccedil;&atilde;o 
+        ao seu grupo, o comando ser&aacute;:</p>
+      <p><strong>chmod g+rw teste.old</strong></p>
+      <p>Agora, vamos supor que o arquivo <em>teste.old</em> dever&aacute; estar 
+        com todas as permiss&otilde;es dispon&iacute;veis para o grupo. Podemos 
+        usar ent&atilde;o:</p>
+      <p><strong>chmod g=rwx teste.old</strong></p>
+      <p><img src="img_art/perlin1.jpg" width="643" height="366" alt="Repare que o arquivo teste.old tem permiss&otilde;es rwx para o grupo"><br />
+        <em>Repare que o arquivo teste.old tem permiss&otilde;es rwx para o grupo</em></p>
+      <p>Dica: crie arquivos e diret&oacute;rios. Em seguida, teste a combina&ccedil;&atilde;o 
+        de permiss&otilde;es com chmod. Isso lhe ajudar&aacute; muito no entendimento 
+        deste recurso.</p>
+      <br />
+      <h2>Usando chmod com o m&eacute;todo num&eacute;rico</h2>
+      <p>Usar o chmod com valores num&eacute;ricos &eacute; uma tarefa bastante 
+        pr&aacute;tica. Em vez de usar letras como s&iacute;mbolos para cada permiss&atilde;o, 
+        usam-se n&uacute;meros. Se determinada permiss&atilde;o &eacute; habilitada, 
+        atribui-se valor 1, caso contr&aacute;rio, atribui-se o valor 0. Sendo 
+        assim, a string de permiss&otilde;es<strong> r-xr-----</strong> na forma num&eacute;rica 
+        fica sendo <strong>101100000</strong>. Essa combina&ccedil;&atilde;o de 1 e 0 &eacute; 
+        um n&uacute;mero bin&aacute;rio. Mas temos ainda que acrescentar a forma 
+        decimal (ou seja, n&uacute;meros de 0 a 9). Para isso, observe a tabela 
+        abaixo:<br />
+      </p>
+      <table border="0" width="19%">
+        <tr>
+            
+          <td width="40%" bgcolor="#CCFFFF"><strong>Permiss&atilde;o</strong></td>
+            
+          <td width="30%" bgcolor="#FFFFCC"><strong>Bin&aacute;rio</strong></td>
+            
+          <td width="30%" bgcolor="#FFCCCC"><strong>Decimal</strong></td>
+          </tr>
+          <tr>
+            
+          <td width="40%" bgcolor="#CCFFFF">---</td>
+            
+          <td width="30%" bgcolor="#FFFFCC">000</td>
+            
+          <td width="30%" bgcolor="#FFCCCC">0</td>
+          </tr>
+          <tr>
+            
+          <td width="40%" bgcolor="#CCFFFF">--x</td>
+            
+          <td width="30%" bgcolor="#FFFFCC">001</td>
+            
+          <td width="30%" bgcolor="#FFCCCC">1</td>
+          </tr>
+          <tr>
+            
+          <td width="40%" bgcolor="#CCFFFF">-w-</td>
+            
+          <td width="30%" bgcolor="#FFFFCC">010</td>
+            
+          <td width="30%" bgcolor="#FFCCCC">2</td>
+          </tr>
+          <tr>
+            
+          <td width="40%" bgcolor="#CCFFFF">-wx</td>
+            
+          <td width="30%" bgcolor="#FFFFCC">011</td>
+            
+          <td width="30%" bgcolor="#FFCCCC">3</td>
+          </tr>
+          <tr>
+            
+          <td width="40%" bgcolor="#CCFFFF">r--</td>
+            
+          <td width="30%" bgcolor="#FFFFCC">100</td>
+            
+          <td width="30%" bgcolor="#FFCCCC">4</td>
+          </tr>
+          <tr>
+            
+          <td width="40%" bgcolor="#CCFFFF">r-x</td>
+            
+          <td width="30%" bgcolor="#FFFFCC">101</td>
+            
+          <td width="30%" bgcolor="#FFCCCC">5</td>
+          </tr>
+          <tr>
+            
+          <td width="40%" bgcolor="#CCFFFF">rw-</td>
+            
+          <td width="30%" bgcolor="#FFFFCC">110</td>
+            
+          <td width="30%" bgcolor="#FFCCCC">6</td>
+          </tr>
+          <tr>
+            
+          <td width="40%" bgcolor="#CCFFFF">rwx</td>
+            
+          <td width="30%" bgcolor="#FFFFCC">111</td>
+            
+          <td width="30%" bgcolor="#FFCCCC">7</td>
+          </tr>
+        </table>
+
+      <p>Se voc&ecirc; n&atilde;o conhece o sistema bin&aacute;rio deve estar 
+        se perguntando o que esse &quot;monte&quot; de 0 e 1 tem a ver com os 
+        n&uacute;meros de 0 a 7. Como o sistema bin&aacute;rio somente trabalha 
+        com os n&uacute;meros 0 e 1 (decimal trabalha com os n&uacute;meros de 
+        0 a 9, ou seja, &eacute; o sistema de numera&ccedil;&atilde;o que utilizamos 
+        no nosso cotidiano), ele precisa de uma sequ&ecirc;ncia para representar 
+        os valores. Sendo assim, na tabela acima, a coluna <em>Bin&aacute;rio</em> 
+        mostra como s&atilde;o os valores bin&aacute;rios dos n&uacute;meros de 
+        0 a 7 do sistema decimal. </p>
+      <p>Chegou a hora ent&atilde;o de relacionar a explica&ccedil;&atilde;o do 
+        par&aacute;grafo acima com a coluna <em>Permiss&atilde;o</em>. Para exemplificar, 
+        vamos utilizar a permiss&atilde;o <strong>rw-</strong>, cujo valor em bin&aacute;rio 
+        &eacute; <strong>110</strong>, que por sua vez, em decimal corresponde ao n&uacute;mero 
+        <strong>6</strong>. Ent&atilde;o, em vez de usar <strong>rw-</strong> ou <strong>110</strong> para criar 
+        a permiss&atilde;o, simplesmente usa-se o n&uacute;mero <strong>6</strong>. Repare 
+        que, com o m&eacute;todo num&eacute;rico, usamos somente um d&iacute;gito 
+        para representar uma permiss&atilde;o, em vez de tr&ecirc;s. Assim sendo, 
+        a string de permiss&otilde;es <strong>r--r--r--</strong> pode ser representa por 
+        <strong>444</strong>, pois <strong>r--</strong> em decimal &eacute; igual a quatro. Observe 
+        o exemplo abaixo:</p>
+      <p><strong>chmod 600 notas.txt</strong></p>
+      <p><img src="img_art/perlin2.jpg" width="643" height="366" alt="Permiss&otilde;es rw------- no arquivo notas.txt com o comando chmod 600"><br /><em>Permiss&otilde;es 
+        rw------- no arquivo notas.txt com o comando chmod 600</em></p>
+      <p>Acima, est&atilde;o sendo dadas as permiss&otilde;es <strong>rw-------</strong> 
+        ao arquivo <em>notas.txt</em>, pois <strong>6</strong> equivale a <strong>rw-</strong> e <strong>0</strong> 
+        equivale a <strong>---</strong>. Como zero aparece duas vezes, forma-se ent&atilde;o 
+        o valor 600. Fa&ccedil;a o comando acima com um arquivo de teste e depois 
+        digite <em>ls- l notas.txt</em> para ver o que aparece (<em>notas.txt</em> 
+        deve ser substitu&iacute;do pelo arquivo que voc&ecirc; est&aacute; usando). 
+        A tabela abaixo mostra uma lista de configura&ccedil;&otilde;es bastante 
+        utilizadas:<br />
+      </p>
+      <table border="0" width="12%">
+        <tr bgcolor="#FFFFCC">
+          <td width="59%">---------</td>
+          <td width="41%">000</td>
+        </tr>
+        <tr bgcolor="#CCFFFF">
+          <td width="59%">r--------</td>
+          <td width="41%">400</td>
+        </tr>
+        <tr bgcolor="#CCCCCC">
+          <td width="59%">r--r--r-- </td>
+          <td width="41%">444</td>
+        </tr>
+        <tr bgcolor="#CCFFCC">
+          <td width="59%">rw-------</td>
+          <td width="41%">600</td>
+        </tr>
+        <tr bgcolor="#FFCCCC">
+          <td width="59%">rw-r--r--</td>
+          <td width="41%">644</td>
+        </tr>
+        <tr bgcolor="#FFCC99">
+          <td width="59%">rw-rw-rw-</td>
+          <td width="41%">666 </td>
+        </tr>
+        <tr bgcolor="#00CCCC">
+          <td width="59%">rwx------</td>
+          <td width="41%">700</td>
+        </tr>
+        <tr bgcolor="#CCCC99">
+          <td width="59%">rwxr-x---</td>
+          <td width="41%">750</td>
+        </tr>
+        <tr bgcolor="#33FFCC">
+          <td width="59%">rwxr-xr-x</td>
+          <td width="41%">755</td>
+        </tr>
+        <tr bgcolor="#CCCCFF">
+          <td width="59%">rwxrwxrwx</td>
+          <td width="41%">777</td>
+        </tr>
+      </table>
+	  <p>As tr&ecirc;s &uacute;ltimas permiss&otilde;es da tabela s&atilde;o comumente 
+        usadas para programas e diret&oacute;rios.</p>
+      <br />
+
+  	<div id="promo">
+	
+			
+	</div>
+	  
+      <h2>Finalizando</h2>
+      <p>Como voc&ecirc; viu, &eacute; muito mais pr&aacute;tico utilizar o chmod 
+        com o m&eacute;todo num&eacute;rico. Mas voc&ecirc; pode ter ficado confuso 
+        com todo esse esquema de permiss&atilde;o. Mas n&atilde;o se sinta culpado 
+        por isso (e tamb&eacute;m n&atilde;o ponha toda a culpa na inefici&ecirc;ncia 
+        do autor para explicar o assunto :D ). A quest&atilde;o &eacute; que nos 
+        sistemas baseados em Unix, permiss&otilde;es s&atilde;o um dos aspectos 
+        mais complexos existentes. Tal complexidade &eacute; equivalente &agrave; 
+        efici&ecirc;ncia do uso de permiss&otilde;es. Por isso, a melhor maneira 
+        de entender as permiss&otilde;es &eacute; treinando. Sendo assim, ao trabalho! 
+        Treine, crie permiss&otilde;es e veja seus resultados. Boa aprendizagem!</p>
+      <p><strong><a href="linuxpermissoes2.php">Acesse a segunda parte deste artigo 
+        clicando aqui.</a></strong></p>
+        
+      <p><em>Escrito por <a rel="author" href="https://www.infowester.com/quem.php">Emerson Alecrim</a> - Publicado em 08_02_2004 - Atualizado em 05_02_2010</em></p>
+
+    	<div>
+		
+		<div>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Nativos -->
+		<ins class="adsbygoogle"
+		style="display:block"
+		data-ad-client="ca-pub-2797463243909555"
+		data-ad-slot="1102565440"
+		data-ad-format="autorelaxed"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</div>		
+	
+	</div>	
+	
+	<!-- <hr> -->
+
+	<div class="uol-footer-box" align="center">
+	 <!-- <div class="hidden-xs"> -->
+	 	  
+	 <!-- </div> -->
+	
+	<div id="tools">
+		<a class="back" href="javascript:history.go(-1)" title="Voltar"><img src="layout04/img/voltar.png" alt="Voltar" />Voltar</a>
+		<a class="home" href="/" title="P&aacute;gina inicial"><img src="layout04/img/home.png" alt="P&aacute;gina inicial" />In&iacute;cio</a>
+		<a class="topo" href="#breadcrumb" title="Ir para o topo"><img src="layout04/img/topo.png" alt="Ir para o topo" />Topo</a>
+		<br class="clear" />
+	</div>
+   
+</div>
+
+<br class="clear" />	
+	<!-- Futuras inserções 4 -->
+	
+	</div> <!-- class="body" -->
+	
+	</article>
+
+		</div> <!-- col-md-8 blog-main -->
+		
+		<aside class="col-md-4 blog-aside">
+	<div class="aside-widget">
+		<header>
+			<h3>&Uacute;ltimas atualiza&ccedil;&otilde;es</h3>
+        </header>
+         
+		 <div class="body">
+			<ul class="tales-list">
+				<li><a href="https://www.infowester.com/displayport.php">
+O que &eacute; DisplayPort? Vers&otilde;es, conectores e mais</a></li>
+
+<li><a href="https://www.infowester.com/home-office.php">
+Home office: 20 dicas para trabalhar de casa</a></li>
+
+<li><a href="https://www.infowester.com/biometria.php">
+O que &eacute; biometria? (reconhecimento facial, impress&atilde;o digital e mais)</a></li>	
+
+<li><a href="https://www.infowester.com/open-banking.php">
+O que &eacute; Open Banking (e como funciona)</a></li>
+
+<li><a href="https://www.infowester.com/hdmi-2-1.php">
+HDMI 2.1: o que &eacute; e quais s&atilde;o as suas caracter&iacute;sticas</a></li>
+
+<li><a href="https://www.infowester.com/lmr-pmr-cmr-smr.php">
+Diferen&ccedil;as entre LMR, PMR, CMR e SMR nos HDs</a></li>	
+
+<li><a href="https://www.infowester.com/hamr-mamr.php">
+HAMR e MAMR nos HDs: o que s&atilde;o?</a></li>
+
+<li><a href="https://www.infowester.com/phishing.php">
+O que &eacute; phishing? E como evitar golpes do tipo?</a></li>	
+
+<li><a href="https://www.infowester.com/ransomware.php">
+Tudo sobre ransomwares</a></li>
+
+<li><a href="https://www.infowester.com/iot.php">
+O que &eacute; Internet das Coisas (Internet of Things)?</a></li>
+
+
+
+
+
+            </ul>			
+         </div>
+	</div>	
+	
+	<div class="aside-widget">
+
+		<hr>
+	
+		<div class="body">
+		
+		<style type="text/css">
+.sidebar_art_ad_1 { display:inline-block; width: 300px; height: 250px; }
+@media (max-width: 500px) { .sidebar_art_ad_1 { width: 300px; height: 250px; } }
+@media (min-width: 550px) { .sidebar_art_ad_1 { width: 300px; height: 600px; } }
+</style>		
+<!-- sidebar_art_ad_1 -->
+<ins class="adsbygoogle sidebar_art_ad_1"
+     data-ad-client="ca-pub-2797463243909555"
+     data-ad-slot="4787198494"
+	 data-full-width-responsive="true"></ins>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>		
+		</div>	
+	
+	</div>
+	
+	<div class="hidden-xs">
+	<div class="aside-widget">
+		<header>
+			<h3>Acompanhe</h3>
+        </header>
+		<div class="body">
+			<ul class="tales-list">						
+				<li><a href="https://www.facebook.com/InfoWester/"><img src="https://www.infowester.com/layout04/img/icon_facebook.jpg" width="16" height="16" alt="No Facebook"> Facebook</a></li>
+				<li><a href="https://twitter.com/InfoWester/"><img src="https://www.infowester.com/layout04/img/icon_twitter.jpg" width="16" height="16" alt="No Twitter"> Twitter</a></li>
+				<li><a href="https://www.infowester.com/newsiw.xml"><img src="https://www.infowester.com/layout04/img/icon_rss.jpg" width="16" height="16" alt="Feed RSS"> Feed RSS</a></li>				
+            </ul>
+		</div>
+	</div>	
+	</div>			
+		
+</aside>	
+ 
+ </div> <!-- class="row" / inferiores: container e widewrapper main --> 
+
+	</div>
+
+</div>
+
+<footer>
+	<div class="widewrapper footer">
+		<div class="container">
+			
+			<div class="row">
+                    <div class="col-md-4 footer-widget">
+
+                        <ul class="tales-list">						
+							<li><a href="https://www.facebook.com/InfoWester/">No Facebook</a></li>
+							<li><a href="https://twitter.com/InfoWester/">No Twitter</a></li>
+							<li><a href="https://www.infowester.com/newsiw.xml">Feed RSS</a></li>													
+                        </ul>
+					 </div>	
+
+                    <div class="col-md-4 footer-widget">
+						 <ul class="tales-list">
+							<li><strong><a href="https://www.infowester.com/contato.php">CONTATO</a></strong></li>						 
+							<li><a href="https://www.infowester.com/sobre.php">Sobre</a></li> 
+							<li><a href="https://www.infowester.com/privacidade.php">Privacidade</a></li>
+							<!-- <li><a href="https://www.infowester.com/anuncie.php">Anuncie</a></li>		-->					
+						</ul>
+					</div>
+					
+					<div class="col-md-4 footer-widget">
+                        <p>Por <a href="https://www.infowester.com/quem.php"><strong>Emerson Alecrim</strong></a></p>
+
+						
+                        <p>InfoWester 2001-2020<br />
+						<a href="https://www.infowester.com/usoartigos.php">Licen&ccedil;a CC BY-NC-SA 4.0</a></li></p> 
+											
+                    </div>
+                </div>
+            </div>
+        </div>
+	 </div>	
+</footer>
+
+<!-- JQuery -->
+    <!--[if lt IE 9]>      
+        <script src="layout04/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+    <![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="layout04/js/vendor/jquery/jquery-1.11.0.min.js"><\/script>')</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91337903-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-91337903-1');
+</script>
+
+
+<script src="layout04/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="layout04/js/vendor/modernizr/modernizr.js"></script>
+<!-- <script src='http://ads5755.hotwords.com.br/show.jsp?id=5755&cor=009900'></script> -->
+
+
+</body>
+</html>
