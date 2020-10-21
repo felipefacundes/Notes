@@ -6,7 +6,7 @@
 
 As permissões são um dos aspectos mais importantes do Linux (na verdade, de todos os sistemas baseados em Unix). Elas são usadas para vários fins, mas servem principalmente para proteger o sistema e os arquivos dos usuários. Manipular permissões é uma atividade interessante, mas complexa ao mesmo tempo. Mas tal complexidade não deve ser interpretada como dificuldade e sim como possibilidade de lidar com uma grande variedade de configurações, o que permite criar vários tipos de proteção a arquivos e diretórios.
 
-Como você deve saber, somente o super-usuário (root) tem ações irrestritas no sistema, justamente por ser o usuário responsável pela configuração, administração e manutenção do Linux. Cabe a ele, por exemplo, determinar o que cada usuário pode executar, criar, modificar, etc. Naturalmente, a forma usada para especificar o que cada usuário do sistema pode fazer é a determinação de permissões. Sendo assim, neste artigo você verá como configurar permissões de arquivos e diretórios, assim como modificá-las.
+Como você deve saber, somente o super-usuário (**root**) tem ações irrestritas no sistema, justamente por ser o usuário responsável pela configuração, administração e manutenção do Linux. Cabe a ele, por exemplo, determinar o que cada usuário pode executar, criar, modificar, etc. Naturalmente, a forma usada para especificar o que cada usuário do sistema pode fazer é a determinação de permissões. Sendo assim, neste artigo você verá como configurar permissões de arquivos e diretórios, assim como modificá-las.
 
 <br/>
 <br/>
@@ -15,8 +15,8 @@ Como você deve saber, somente o super-usuário (root) tem ações irrestritas n
 
 <br/>
 
-    drwx------ ... 2 wester ............. 512 Jan ... 29 23:30 .. Arquivos/
-    -rw-rw-r-- ... 1 wester ....... 280232 Dec .. 16 22:41... notas.txt
+    drwx------ ... 2 user ............. 512 Jan ... 29 23:30 .. Arquivos/
+    -rw-rw-r-- ... 1 user ....... 280232 Dec .. 16 22:41... notas.txt
 
 <br/>
 
@@ -24,20 +24,22 @@ As linhas acima representam um comando digitado (`ls -l`) para listar um diretó
 
 | String | Tipo |
 | --- | --- |
-| d => | diretório |
-| b => | arquivo de bloco |
-| c => | arquivo especial de caractere |
-| p => | canal |
-| s => | socket |
-| - => | arquivo "normal" |
+| d **=>** | diretório |
+| b **=>** | arquivo de bloco |
+| c **=>** | arquivo especial de caractere |
+| p **=>** | canal |
+| s **=>** | socket |
+| - **=>** | arquivo "normal" |
 
 <br/>
 
 Repare agora que no restante da string ainda há 9 caracteres. Você já sabe o que significa o primeiro. Os demais são divididos em três grupos de três, cada um representado o proprietário, o grupo e todos os demais, respectivamente. Tomando a linha 2 do exemplo **(-rw-rw-r-)**, desconsiderando o primeiro caractere e dividindo a string restante em 3 partes, ficaria assim:
 
-    rw- => a primeira parte significa permissões do proprietário
-    rw- => a segunda parte significa permissões do grupo ao qual o usuário pertence
-    r-- => a terceira parte significa permissões para os demais usuários
+| String | Significado |
+| ------ | ----------- |
+| rw- => | a primeira parte significa permissões do proprietário |
+| rw- => | a segunda parte significa permissões do grupo ao qual o usuário pertence |
+| r-- => | a terceira parte significa permissões para os demais usuários |
 
 <br/>
 
