@@ -22,7 +22,7 @@ Como você deve saber, somente o super-usuário (root) tem ações irrestritas n
 
 As linhas acima representam um comando digitado (ls -l) para listar um diretório e suas permissões. O primeiro item que aparece em cada linha **(drwx----- e -rw-rw-r-)** é a forma usada para mostrar as permissões do diretório Arquivos e do arquivo notas.txt. É esse item, que recebe o nome de string, que vamos estudar. Um ponto interessante de citar é que o Linux trata todos os diretórios como arquivos também, portanto, as permissões se aplicam de igual forma para ambos. Tais permissões podem ser divididas em quatro partes para indicar: tipo, proprietário, grupo e outras permissões. O primeiro caractere da string indica o tipo de arquivo: se for **"d"** representa um diretório, se for "-" equivale a um arquivo. Entretanto, outros caracteres podem aparecer para indicar outros tipos de arquivos, conforme mostra a tabela abaixo:
 
-| ---- | --------- |
+| ---- | ---- |
 | d => | diretório |
 | b => | arquivo de bloco |
 | c => | arquivo especial de caractere |
