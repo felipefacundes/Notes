@@ -63,7 +63,7 @@ A ordem em que as permissões devem aparecer é **rwx**. Sendo assim, vamos ente
 #### Linha 2:
 ##### -rw-rw-r-- ... 1 wester .......... 280232 Dec .. 16 22:41... notas.txt
 
-<p style='color:red'>This is some red text.</p>
+<font color="red">This is some text!</font>
 
 - é um arquivo (-);
 - o proprietário pode alterá-lo, gravá-lo, mas não executá-lo. Repare que como este arquivo não é executável, a permissão de execução aparece desabilitada (rw-);
