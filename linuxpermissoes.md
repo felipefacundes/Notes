@@ -133,16 +133,16 @@ Usando chmod com o método numérico
 
 Usar o chmod com valores numéricos é uma tarefa bastante prática. Em vez de usar letras como símbolos para cada permissão, usam-se números. Se determinada permissão é habilitada, atribui-se valor 1, caso contrário, atribui-se o valor 0. Sendo assim, a string de permissões **r-xr-----** na forma numérica fica sendo 101100000. Essa combinação de 1 e 0 é um número binário. Mas temos ainda que acrescentar a forma decimal (ou seja, números de 0 a 9). Para isso, observe a tabela abaixo:
 
-| Permissão |	Binário |	Decimal
-| --------------- |
-| --- |	000 |	0 |
-| --x |	001 |	1 |
-| -w- |	010 |	2 |
-| -wx |	011 |	3 |
-| r-- |	100 |	4 |
-| r-x |	101 |	5 |
-| rw- |	110 |	6 |
-| rwx |	111 |	7 |
+| Permissão | Binário | Decimal
+| --- | --- | --- |
+| --- |	000 | 0 |
+| --x |	001 | 1 |
+| -w- |	010 | 2 |
+| -wx |	011 | 3 |
+| r-- |	100 | 4 |
+| r-x |	101 | 5 |
+| rw- |	110 | 6 |
+| rwx |	111 | 7 |
 
 Se você não conhece o sistema binário deve estar se perguntando o que esse **"monte"** de 0 e 1 tem a ver com os números de 0 a 7. Como o sistema binário somente trabalha com os números 0 e 1 (decimal trabalha com os números de 0 a 9, ou seja, é o sistema de numeração que utilizamos no nosso cotidiano), ele precisa de uma sequência para representar os valores. Sendo assim, na tabela acima, a coluna Binário mostra como são os valores binários dos números de 0 a 7 do sistema decimal.
 
