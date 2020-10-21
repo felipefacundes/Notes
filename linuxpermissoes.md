@@ -63,16 +63,19 @@ A ordem em que as permissões devem aparecer é **rwx**. Sendo assim, vamos ente
 #### Linha 2:
 ##### -rw-rw-r-- ... 1 wester .......... 280232 Dec .. 16 22:41... notas.txt
 
-These are <b style='color:red'>red words</b>
-<h3 style="color:#ff0000">Danger</h3>
+
+<p style="color:#ff0000">Danger<p/>
+<b style="color:#ff0000">Danger<b/>
+<span style="color: green"> Some green text </span>
 <span style="color: green"> Some green text </span>
 
+
 ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
+- Vermelho
++ Verde
+! Laranja
+# Cinza
+@@ Roxo
 ```
 
 - é um arquivo (-);
