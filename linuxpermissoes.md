@@ -14,9 +14,10 @@ Como você deve saber, somente o super-usuário (**root**) tem ações irrestrit
 
 <br/>
 
-    drwx------ ... 2 user ............. 512 Jan ... 29 23:30 .. Arquivos/
-    -rw-rw-r-- ... 1 user ....... 280232 Dec .. 16 22:41... notas.txt
-
+```
+drwx------ ... 2 user ............. 512 Jan ... 29 23:30 .. Arquivos/
+-rw-rw-r-- ... 1 user ....... 280232 Dec .. 16 22:41... notas.txt
+```
 <br/>
 
 As linhas acima representam um comando digitado (`ls -l`) para listar um diretório e suas permissões. O primeiro item que aparece em cada linha **(drwx----- e -rw-rw-r-)** é a forma usada para mostrar as permissões do diretório Arquivos e do arquivo `notas.txt`. É esse item, que recebe o nome de string, que vamos estudar. Um ponto interessante de citar é que o Linux trata todos os diretórios como arquivos também, portanto, as permissões se aplicam de igual forma para ambos. Tais permissões podem ser divididas em quatro partes para indicar: tipo, proprietário, grupo e outras permissões. O primeiro caractere da string indica o tipo de arquivo: se for **"d"** representa um diretório, se for "-" equivale a um arquivo. Entretanto, outros caracteres podem aparecer para indicar outros tipos de arquivos, conforme mostra a tabela abaixo:
@@ -65,17 +66,30 @@ Agora que já sabemos o significado das divisões da string, vamos entender o qu
 
 A ordem em que as permissões devem aparecer é **rwx**. Sendo assim, vamos entender a string do nosso exemplo dividindo-a em 4 partes:
 
+<br/>
+
 #### Linha 1:
+
+<br/>
+
     drwx------ ... 2 user ............... 512 Jan ... 29 23:30 .. Arquivos/
+
+<br/>
 
 - é um diretório (d);
 - o proprietário pode alterá-lo, gravá-lo e executá-lo (rwx);
 - o grupo não pode pode alterá-lo, gravá-lo, nem executá-lo (---);
 - os demais usuários não podem alterá-lo, gravá-lo, nem executá-lo (---).
 
+<br/>
+
 #### Linha 2:
+
+<br/>
+
     -rw-rw-r-- ... 1 user .......... 280232 Dec .. 16 22:41... notas.txt
 
+<br/>
 
 - é um arquivo (-);
 - o proprietário pode alterá-lo, gravá-lo, mas não executá-lo. Repare que como este arquivo não é executável, a permissão de execução aparece desabilitada (rw-);
@@ -106,7 +120,11 @@ Nos tópicos anteriores você dever tido pelo menos uma noção do que são perm
 
 #### Para ter uma visão mais clara da forma simbólica com o chmod, imagine que tais símbolos se encontram em duas listas, e a combinação deles gera a permissão:
 
+<br/>
+
 Lista 1
+
+<br/>
 
 - Símbolo
 
@@ -120,6 +138,8 @@ Lista 1
 <br/>
 
 Lista 2
+
+<br/>
 
 - Símbolo
 
