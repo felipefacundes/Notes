@@ -85,7 +85,7 @@ Nos tópicos anteriores você dever tido pelo menos uma noção do que são perm
 #### Para ter uma visão mais clara da forma simbólica com o chmod, imagine que tais símbolos se encontram em duas listas, e a combinação deles gera a permissão:
 
 Lista 1
-Símbolo
+- Símbolo
      
     u => usuário
     g => grupo
@@ -93,7 +93,7 @@ Símbolo
     a => todos
 
 Lista 2
-Símbolo
+- Símbolo
 
     r => leitura
     w => gravação
@@ -128,22 +128,22 @@ Usando chmod com o método numérico
 
 Usar o chmod com valores numéricos é uma tarefa bastante prática. Em vez de usar letras como símbolos para cada permissão, usam-se números. Se determinada permissão é habilitada, atribui-se valor 1, caso contrário, atribui-se o valor 0. Sendo assim, a string de permissões **r-xr-----** na forma numérica fica sendo 101100000. Essa combinação de 1 e 0 é um número binário. Mas temos ainda que acrescentar a forma decimal (ou seja, números de 0 a 9). Para isso, observe a tabela abaixo:
 
-Permissão 	Binário 	Decimal
+| Permissão |	Binário |	Decimal
+-----------------------------------
+--- |	000 |	0
+--x |	001 |	1
+-w- |	010 |	2
+-wx |	011 |	3
+r-- |	100 |	4
+r-x |	101 |	5
+rw- |	110 |	6
+rwx |	111 |	7
 
-    --- 	000 	0
-    --x 	001 	1
-    -w- 	010 	2
-    -wx 	011 	3
-    r-- 	100 	4
-    r-x 	101 	5
-    rw- 	110 	6
-    rwx 	111 	7
-
-Se você não conhece o sistema binário deve estar se perguntando o que esse "monte" de 0 e 1 tem a ver com os números de 0 a 7. Como o sistema binário somente trabalha com os números 0 e 1 (decimal trabalha com os números de 0 a 9, ou seja, é o sistema de numeração que utilizamos no nosso cotidiano), ele precisa de uma sequência para representar os valores. Sendo assim, na tabela acima, a coluna Binário mostra como são os valores binários dos números de 0 a 7 do sistema decimal.
+Se você não conhece o sistema binário deve estar se perguntando o que esse **"monte"** de 0 e 1 tem a ver com os números de 0 a 7. Como o sistema binário somente trabalha com os números 0 e 1 (decimal trabalha com os números de 0 a 9, ou seja, é o sistema de numeração que utilizamos no nosso cotidiano), ele precisa de uma sequência para representar os valores. Sendo assim, na tabela acima, a coluna Binário mostra como são os valores binários dos números de 0 a 7 do sistema decimal.
 
  <br/>
  
-Chegou a hora então de relacionar a explicação do parágrafo acima com a coluna Permissão. Para exemplificar, vamos utilizar a permissão rw-, cujo valor em binário é 110, que por sua vez, em decimal corresponde ao número 6. Então, em vez de usar rw- ou 110 para criar a permissão, simplesmente usa-se o número 6. Repare que, com o método numérico, usamos somente um dígito para representar uma permissão, em vez de três. Assim sendo, a string de permissões **r--r--r--** pode ser representa por 444, pois r-- em decimal é igual a quatro. Observe o exemplo abaixo:
+Chegou a hora então de relacionar a explicação do parágrafo acima com a coluna Permissão. Para exemplificar, vamos utilizar a permissão **rw-**, cujo valor em binário é `110`, que por sua vez, em decimal corresponde ao número 6. Então, em vez de usar **rw-** ou `110` para criar a permissão, simplesmente usa-se o número 6. Repare que, com o método numérico, usamos somente um dígito para representar uma permissão, em vez de três. Assim sendo, a string de permissões **r--r--r--** pode ser representa por `444`, pois **r--** em decimal é igual a quatro. Observe o exemplo abaixo:
 
 `chmod 600 notas.txt`
 
@@ -152,24 +152,24 @@ Chegou a hora então de relacionar a explicação do parágrafo acima com a colu
 - Permissões **rw-------** no arquivo notas.txt com o comando chmod 600
 - Permissões **rw-------** no arquivo notas.txt com o comando chmod 600
 
-Acima, estão sendo dadas as permissões **rw-------** ao arquivo `notas.txt`, pois 6 equivale a **rw-** e 0 equivale a **---**. Como zero aparece duas vezes, forma-se então o valor 600. Faça o comando acima com um arquivo de teste e depois digite ls- l notas.txt para ver o que aparece (notas.txt deve ser substituído pelo arquivo que você está usando). A tabela abaixo mostra uma lista de configurações bastante utilizadas:
+Acima, estão sendo dadas as permissões **rw-------** ao arquivo `notas.txt`, pois 6 equivale a **rw-** e 0 equivale a **---**. Como zero aparece duas vezes, forma-se então o valor `600`. Faça o comando acima com um arquivo de teste e depois digite `ls- l` notas.txt para ver o que aparece (notas.txt deve ser substituído pelo arquivo que você está usando). A tabela abaixo mostra uma lista de configurações bastante utilizadas:
 
-`--------- 	000`
-`r-------- 	400`
-`r--r--r-- 	444`
-`rw------- 	600`
-`rw-r--r-- 	644`
-`rw-rw-rw- 	666`
-`rwx------ 	700`
-`rwxr-x--- 	750`
-`rwxr-xr-x 	755`
-`rwxrwxrwx 	777`
+    --------- 	000
+    r-------- 	400
+    r--r--r-- 	444
+    rw------- 	600
+    rw-r--r-- 	644
+    rw-rw-rw- 	666
+    rwx------ 	700
+    rwxr-x--- 	750
+    rwxr-xr-x 	755
+    rwxrwxrwx 	777
 
 As três últimas permissões da tabela são comumente usadas para programas e diretórios.
 
 <br/>
 
-Finalizando
+##### Finalizando
 
 <br/>
 
