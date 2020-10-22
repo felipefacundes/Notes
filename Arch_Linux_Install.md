@@ -7,7 +7,7 @@
 
 <br><br/>
 
-## Primeiro conecte com a internet:
+### Primeiro conecte com a internet:
 
 ##### Verifique sua interface de rede Wifi:
 ```
@@ -17,7 +17,7 @@ iwconfig
 ###### Digite:
 `wifi-menu`
 
-## Backup - Para uma reinstalação do sistema sem formatar:
+### Backup - Para uma reinstalação do sistema sem formatar:
 
 ###### O BACKUP PODE SER, PARA UMA LISTA. Para uma reinstalação, baixando os pacotes novamente:
 ###### Leia. Na linha abaixo, contém 2 linhas de comando, obedeça cada comando:
@@ -55,7 +55,7 @@ cd /mnt/boot/
 sudo rm -rf *
 ```
 
-## Particione o HD
+### Particione o HD
 ###### Crie `"sda1"` 300MB para boot - Se for `UEFI` a partição de `BOOT` tem que estar em `FAT32`.
 ###### Crie `"sda2"` uma partição para a raiz `(/)` do sistema `(root)` de no mínimo 30GB.
 ###### Crie `"sda3"` 512MB ou 3GB para swap / `3GB se quiser o modo hibernar` - pode ser um tamanho maior, até ao mesmo número de sua RAM
@@ -84,7 +84,7 @@ sudo fdisk -l
 ###### Se for usar como `/boot` tem que ter no mínimo `100M` como `/boot/EFI` o mínimo é `40M`
 `mkfs.fat -F32 -n BOOT /dev/sda1`
 
-## Exemplo de FORMATAÇÃO
+### Exemplo de FORMATAÇÃO
 ###### A opção `-L` atribui rótulos às partições, o que ajuda a consultá-las mais tarde através de /dev/disk/by-label sem ter que se lembrar de seus números. Agora, monte suas partições:
 
 ```
@@ -101,7 +101,7 @@ loadkeys br-abnt2
 export LANG=pt_BR.UTF-8
 ```
 
-## INSTALAÇÃO: SISTEMA BASE E FERRAMENTAS
+### INSTALAÇÃO: SISTEMA BASE E FERRAMENTAS
 ###### Leia. Na linha abaixo, contém 7 linhas de comando, obedeça cada comando:
 
 ```
@@ -114,7 +114,7 @@ mount /dev/sda4 /mnt/boot
 sudo pacman -Syy archlinux-keyring arch-install-scripts btrfs-progs
 ```
 
-## FINALMENTE, VAMOS PARA A INSTALAÇÃO:
+### FINALMENTE, VAMOS PARA A INSTALAÇÃO:
 ###### Leia. Na linha abaixo, contém 2 linhas de comando, obedeça cada comando:
 ```
 pacstrap -i /mnt grub base wget base-devel linux mkinitcpio nano
@@ -128,7 +128,7 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 
 https://github.com/felipefacundes/desktop/tree/master/GRUB
 
-## Para que o sistema inicie corretamente, instalar o GRUB:
+### Para que o sistema inicie corretamente, instalar o GRUB:
 ###### Leia. Na linha abaixo, contém 2 linhas de comando, obedeça cada comando:
 ```
 pacman -S grub ntfs-3g fuse2 fuse3 dosfstools efibootmgr exfat-utils mtools f2fs-tools gpart libusbx udftools gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp ifuse fuseiso libisoburn sdl xz gettext device-mapper lxcfs bash-completion bash freetype2 jfsutils btrfs-progs reiserfsprogs xfsprogs nilfs-utils polkit
