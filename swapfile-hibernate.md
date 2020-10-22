@@ -1,7 +1,9 @@
-## swapfile hibernate
+## Swapfile Hibernate
 
 ### Hibernar com swapfile sem programas adicionais.
 ###### Hibernate with swapfile without programs. 
+
+<br/>
 
 ### Crie e monte o swapfile. 
 ###### Create and mount swapfile
@@ -88,6 +90,8 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
     /swapfile  none  swap  defaults  0 0
 
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
