@@ -94,21 +94,21 @@ sudo fdisk -l
 ##### Para formatar corretamente cada partição linux. Formate em ext4 64Bits. Exemplo:  
 `sudo mke2fs -text4 -O 64bit /dev/sdXnº`
 
-###### `EXT4` é mais `compatível` com programas DESKTOP: jogos, e etc. Sem dizer que ext4 é um sistema maduro. Que suporta desligamento inadequado.
+##### `EXT4` é mais `compatível` com programas DESKTOP: jogos, e etc. Sem dizer que ext4 é um sistema maduro. Que suporta desligamento inadequado.
 `sudo mke2fs -text4 -O 64bit /dev/sda1`
 
 #### Para `UEFI`
 
-###### A partição `/boot` ou `/boot/EFI` já tem que estar em `FAT32`
+##### A partição `/boot` ou `/boot/EFI` já tem que estar em `FAT32`
 
-###### Vale ressaltar que uma partição `FAT32` tem que ter no mínimo `40M`
+##### Vale ressaltar que uma partição `FAT32` tem que ter no mínimo `40M`
 
-###### Se for usar como `/boot` tem que ter no mínimo `100M` como `/boot/EFI` o mínimo é `40M`
+##### Se for usar como `/boot` tem que ter no mínimo `100M` como `/boot/EFI` o mínimo é `40M`
 `mkfs.fat -F32 -n BOOT /dev/sda1`
 
 ### Exemplo de FORMATAÇÃO
 
-###### A opção `-L` atribui rótulos às partições, o que ajuda a consultá-las mais tarde através de /dev/disk/by-label sem ter que se lembrar de seus números. Agora, monte suas partições:
+##### A opção `-L` atribui rótulos às partições, o que ajuda a consultá-las mais tarde através de /dev/disk/by-label sem ter que se lembrar de seus números. Agora, monte suas partições:
 
 ```
 mkswap -L SWAP /dev/sda1                        # <‐ SWAP partição
@@ -151,7 +151,7 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 
 ##### Para HDs encryptados, ou seja, somente, se você, deliberadamente, encryptou o seu HD, para tanto, siga esse LINK do meu tutorial:
 
-https://github.com/felipefacundes/desktop/tree/master/GRUB
+[https://github.com/felipefacundes/desktop/tree/master/GRUB](https://github.com/felipefacundes/desktop/tree/master/GRUB)
 
 ### Para que o sistema inicie corretamente, instalar o GRUB:
 
