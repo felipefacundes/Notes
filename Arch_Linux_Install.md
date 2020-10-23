@@ -1,4 +1,4 @@
-## Uma forma intuitiva de instalar o ArchLinux, por Felipe Facundes
+## Uma forma intuitiva de instalar o ArchLinux
 
 > by Felipe Facundes
 
