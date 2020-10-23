@@ -1,6 +1,7 @@
 ## Uma forma intuitiva de instalar o ArchLinux, por Felipe Facundes
 
 > by Felipe Facundes
+
 ###### Grupo Telegram: https://t.me/winehq_linux
 ###### Canal Telegram: https://t.me/s/PlayOnGit
 ###### Site: https://linuxgamers.github.io/
@@ -169,10 +170,14 @@ mkinitcpio -P
 ###### Agora prepare o GRUB para o UEFI:
 
 ###### Leia. Na linha abaixo, contém 2 linhas de comando, obedeça cada comando:
-```grub-install --verbose --recheck --target=x86_64-efi --force --efi-directory=/boot/EFI --bootloader-id=ARCH --removable```
+```
+grub-install --verbose --recheck --target=x86_64-efi --force --efi-directory=/boot/EFI --bootloader-id=ARCH --removable
+```
 
 ###### ou
-```grub-install --verbose --recheck --target=x86_64-efi --force --efi-directory=/boot --bootloader-id=ARCH --removable```
+```
+grub-install --verbose --recheck --target=x86_64-efi --force --efi-directory=/boot --bootloader-id=ARCH --removable
+```
 
 ###### Finalize com:
 `grub-mkconfig -o /boot/grub/grub.cfg`
@@ -236,11 +241,13 @@ setfont
 
 ###### Localidade em UTF-8 (padrão universal de caracteres). ISO-8859-1 não é mais utilizado.
 
-###### Caso de ERRO na opção ABAIXO: `ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime`
+###### Caso de ERRO na opção ABAIXO: 
+ `ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime`
 
 ###### Execute antes: `rm /etc/localtime`
 
-###### O Padrão abaixo "Sao_Paulo" é o padrão de Brasília. Mude para o fuso horário da sua respectiva cidade, Veja antes às zonas disponíveis com o comando: `ls -h /usr/share/zoneinfo/America/`
+###### O Padrão abaixo "Sao_Paulo" é o padrão de Brasília. Mude para o fuso horário da sua respectiva cidade, Veja antes às zonas disponíveis com o comando: 
+ `ls -h /usr/share/zoneinfo/America/`
 
 ###### Leia. Na linha abaixo, contém 2 linhas de comando, obedeça cada comando:
 ```
