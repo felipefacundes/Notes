@@ -15,6 +15,7 @@
 lspci -k
 iwconfig
 ```
+
 ###### Digite:
 `wifi-menu`
 
@@ -90,7 +91,8 @@ sudo fdisk -l
 ##### Para particionador gráfico caso esteja disponível (somente em `Arch based`):
 `sudo gparted`
 
-##### Para formatar corretamente cada partição linux. Formate em ext4 64Bits. Exemplo:  `sudo mke2fs -text4 -O 64bit /dev/sdXnº`
+##### Para formatar corretamente cada partição linux. Formate em ext4 64Bits. Exemplo:  
+`sudo mke2fs -text4 -O 64bit /dev/sdXnº`
 
 ###### `EXT4` é mais `compatível` com programas DESKTOP: jogos, e etc. Sem dizer que ext4 é um sistema maduro. Que suporta desligamento inadequado.
 `sudo mke2fs -text4 -O 64bit /dev/sda1`
