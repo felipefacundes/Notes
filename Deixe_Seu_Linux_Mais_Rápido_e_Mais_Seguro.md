@@ -1,6 +1,6 @@
-# Deixe o seu computador mais rápido
+# Deixe o seu computador muito mais rápido.
 
-> Deixe o seu computador, muito mais rápido. Baixando totalmente a prioridade de uso da memória swap
+> Baixe totalmente a prioridade de uso da memória swap. E ainda o deixe mais seguro com medidas de segurança consagradas.
 
 #### Edite o arquivo /etc/sysctl.conf
 
@@ -30,6 +30,12 @@ vm.oom_kill_allocating_task=1
 cd /etc
 sudo wget https://raw.githubusercontent.com/felipefacundes/desktop/master/sysctl/sysctl.conf
 ```
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ```bash
                     ,cldxOxoc:;,
