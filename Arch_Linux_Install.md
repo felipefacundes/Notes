@@ -167,7 +167,8 @@ mkinitcpio -P
 
 ### Para sistemas `UEFI`
 
-###### A partição `/boot` ou `/boot/EFI` já tem que estar em `FAT32`. Lá em cima foi dito, para formatar a partição boot: `sudo mkfs.fat -F32 -n BOOT /dev/sda4`
+###### A partição `/boot` ou `/boot/EFI` já tem que estar em `FAT32`. Lá em cima foi dito, para formatar a partição boot: 
+`sudo mkfs.fat -F32 -n BOOT /dev/sda4`
 
 ##### Agora prepare o GRUB para o UEFI:
 
@@ -176,7 +177,7 @@ mkinitcpio -P
 grub-install --verbose --recheck --target=x86_64-efi --force --efi-directory=/boot/EFI --bootloader-id=ARCH --removable
 ```
 
-###### ou
+##### Ou
 ```
 grub-install --verbose --recheck --target=x86_64-efi --force --efi-directory=/boot --bootloader-id=ARCH --removable
 ```
