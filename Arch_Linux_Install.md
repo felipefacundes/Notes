@@ -169,10 +169,10 @@ mkinitcpio -P
 ###### Agora prepare o GRUB para o UEFI:
 
 ###### Leia. Na linha abaixo, contém 2 linhas de comando, obedeça cada comando:
-`grub-install --verbose --recheck --target=x86_64-efi --force --efi-directory=/boot/EFI --bootloader-id=ARCH --removable`
+```grub-install --verbose --recheck --target=x86_64-efi --force --efi-directory=/boot/EFI --bootloader-id=ARCH --removable```
 
 ###### ou
-`grub-install --verbose --recheck --target=x86_64-efi --force --efi-directory=/boot --bootloader-id=ARCH --removable`
+```grub-install --verbose --recheck --target=x86_64-efi --force --efi-directory=/boot --bootloader-id=ARCH --removable```
 
 ###### Finalize com:
 `grub-mkconfig -o /boot/grub/grub.cfg`
@@ -193,13 +193,13 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ###### Leia. Na linha abaixo, contém 2 linhas de comando, obedeça cada comando:
 ```
-useradd -m -g users -G daemon,disk,wheel,rfkill,dbus,network,video,audio,storage,power,users,input -s /bin/bash UsuárioDaSuaPreferência
+useradd -m -g users -G daemon,disk,wheel,rfkill,dbus,network,video,audio,storage,power,users,input -s /bin/bash UsuarioDaSuaPreferencia
 
-usermod -a -G daemon,disk,wheel,rfkill,dbus,network,video,audio,storage,power,users,input UsuárioDaSuaPreferência
+usermod -a -G daemon,disk,wheel,rfkill,dbus,network,video,audio,storage,power,users,input UsuarioDaSuaPreferencia
 ```
 
 ### Criando uma senha de sua preferência, para o seu usuário:
-`passwd UsuárioDaSuaPreferência`
+`passwd UsuarioDaSuaPreferencia`
 
 ### Editando o SUDOers para ter acesso de administrador:
     nano /etc/sudoers
@@ -209,7 +209,7 @@ usermod -a -G daemon,disk,wheel,rfkill,dbus,network,video,audio,storage,power,us
 ###### e logo abaixo inclua o seu usuário assim: UsuárioDaSuaPreferência ALL=(ALL) ALL
 ```
 root ALL=(ALL) ALL
-UsuárioDaSuaPreferência ALL=(ALL) ALL
+UsuarioDaSuaPreferencia ALL=(ALL) ALL
 ```
 
 ### Para o XORG - Ou seja, sem ele você não terá interface gráfica, é extremamente importante:
@@ -440,7 +440,7 @@ systemctl enable lightdm
 
 ###### Para instalar o XMATECE, uma interface tão bonita e completa quanto o MATE, mas que usa menos de 300MB de RAM, siga esse tutorial:
 
-https://github.com/felipefacundes/xmatece
+[https://github.com/felipefacundes/xmatece](https://github.com/felipefacundes/xmatece)
 
 ### Para TTY Autologin - GETTY - aqui é para autologin, SEM PRECISAR de DM (Desktop Manager), como: lightdm, GDM, SDDM e etc:
 
@@ -455,7 +455,7 @@ echo -e "ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
 
 ###### Leia. Na linha abaixo, contém 4 linhas de comando, obedeça cada comando:
 ```
-echo -e "ExecStart=-/usr/bin/agetty --autologin UsuárioDaSuaPreferência --noclear %I $TERM" >> /etc/systemd/system/getty@tty1.service.d/override.conf
+echo -e "ExecStart=-/usr/bin/agetty --autologin UsuarioDaSuaPreferencia --noclear %I $TERM" >> /etc/systemd/system/getty@tty1.service.d/override.conf
 mkdir -p /etc/systemd/system/serial-getty@ttyS0.service.d/
 echo -e "[Service]" > /etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf
 echo -e "ExecStart=" >> /etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf
@@ -463,7 +463,7 @@ echo -e "ExecStart=" >> /etc/systemd/system/serial-getty@ttyS0.service.d/autolog
 
 ###### Não esqueça de mudar o nome do UsuárioDaSuaPreferência  <-- Para o nome do seu usuário de sua preferência. Sem acentos. Exemplo: joao
 ```
-echo -e "ExecStart=-/usr/bin/agetty --autologin UsuárioDaSuaPreferência -s %I 115200,38400,9600 vt102" >> /etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf
+echo -e "ExecStart=-/usr/bin/agetty --autologin UsuarioDaSuaPreferencia -s %I 115200,38400,9600 vt102" >> /etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf
 ```
 
 ### Para instalar o LibreOffice:
@@ -537,11 +537,11 @@ mkinitcpio -P
 
 ##### Se você usa arquivo de troca de paginação - arquivo para memória virtual (swapfile) e quer que o sistema hiberne, siga o tutorial abaixo:
 
-https://github.com/felipefacundes/desktop/tree/master/swapfile-hibernate
+[https://github.com/felipefacundes/desktop/tree/master/swapfile-hibernate](https://github.com/felipefacundes/desktop/tree/master/swapfile-hibernate)
 
 ##### Para ter um excelente suporte de acessibilidade, como TTS, siga o tutorial do meu site:
 
-https://brasiltts.wordpress.com/
+[https://brasiltts.wordpress.com/](https://brasiltts.wordpress.com/)
 
 ##### Para você mudar o nome da sua distribuição, caso queira:
 ```
@@ -564,7 +564,7 @@ rm yay-9.2.0-1-x86_64.pkg.tar.xz
 
 ### Se você quiser instalar Jogos do Windows no Linux, com facilidade. Veja o projeto PlayOnGit
 
-https://jogoslinux.github.io/
+[https://jogoslinux.github.io/](https://jogoslinux.github.io/)
 
 #
 
