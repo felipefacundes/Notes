@@ -1,6 +1,9 @@
 # Deixe o seu computador muito mais rápido.
 
-> Baixe totalmente a prioridade de uso da memória swap. E ainda o deixe mais seguro com medidas de segurança consagradas.
+#
+
+> Baixe totalmente a prioridade de uso da memória swap. 
+###### E ainda o deixe mais seguro com medidas de segurança consagradas.
 
 #### Edite o arquivo /etc/sysctl.conf
 
