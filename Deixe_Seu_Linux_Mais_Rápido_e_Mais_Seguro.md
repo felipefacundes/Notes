@@ -2,10 +2,11 @@
 
 #
 
-> Baixe totalmente a prioridade de uso da memória swap. 
+###### Baixe totalmente a prioridade de uso da memória swap.
+
 ###### E ainda o deixe mais seguro com medidas de segurança consagradas.
 
-#### Edite o arquivo /etc/sysctl.conf
+#### Edite o arquivo `/etc/sysctl.conf`
 
 `sudo nano /etc/sysctl.conf`
 
