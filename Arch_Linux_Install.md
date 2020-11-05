@@ -340,9 +340,10 @@ pacman -S lib32-libcanberra-gstreamer lib32-gstreamer lib32-gst-plugins-good lib
 
 ### Para deixar o seu computador muito mais rápido, eficiente, mais seguro. Aumente a performance e o FPS em JOGOS:
 
-###### Leia. Na linha abaixo, contém 12 linhas de comando, obedeça cada comando:
+###### Leia. Na linha abaixo, contém 13 linhas de comando, obedeça cada comando:
 ```
-echo -e "vm.swappiness=0" > /etc/sysctl.conf
+echo -e "vm.swappiness=10" > /etc/sysctl.conf
+echo -e "net.ipv4.conf.all.rp_filter=1" >> /etc/sysctl.conf
 echo -e "net.ipv4.tcp_syncookies=1" >> /etc/sysctl.conf
 echo -e "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 echo -e "net.ipv4.tcp_dsack=0" > /etc/sysctl.conf
